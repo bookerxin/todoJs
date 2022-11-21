@@ -29,7 +29,9 @@ const toggleStrike = event => {
 const removeTask = () => {
     let tasksToRemove = [...todoList.getElementsByClassName('taskComplete')];
 
-    if (tasksToRemove.length === 0) {
+    let activeElement = document.activeElement.tagName;
+
+    if (tasksToRemove.length === 0 && activeElement !== 'INPUT') {
         todoList.firstChild.remove();
     }
 
@@ -51,8 +53,6 @@ addEventListener('keydown', event => {
 todoBtn.onclick = addTask;
 todoRemoveBtn.onclick = removeTask;
 
-// TODO -
 // TODO - Apply css transition on new task.
-// TODO - Click empty minus for clear first elm.
 // TODO - Make it look better.
 // TODO - Cycle colour schemes at interval.
