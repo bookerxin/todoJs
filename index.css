@@ -1,14 +1,16 @@
 
 /* This allows firefox to adjust to top etc measurements */
 html, body {
+    font-family: Norasi, serif;
+    background-color: bisque;
     height: 100%;
     width: 100%
 }
 
 #main-div {
-    background-color: antiquewhite;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    font-family: "Bitstream Vera Sans", serif;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     text-align: center;
     position: relative;
     top: 30%;
@@ -18,7 +20,12 @@ html, body {
 
 #main-header {
     position: relative;
-    top: 10px;
+    opacity: 0.5;
+    font-family: Courier;
+    font-style: italic;
+    font-size: 10px;
+    top: 24px;
+    right: 100px;
 }
 
 #todo-list {
@@ -26,4 +33,9 @@ html, body {
     display: block;
     right: 5%;
     list-style-type: none;
+}
+
+.taskComplete {
+    text-decoration: line-through;
+    font-style: italic;
 }

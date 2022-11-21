@@ -1,42 +1,48 @@
 
-let todoInput = document.getElementById('todo-input');
-let todoBtn = document.getElementById('todo-btn');
-let todoRemoveBtn = document.getElementById('todo-remove-btn');
-let todoList = document.getElementById('todo-list');
+const todoInput = document.getElementById('todo-input');
+const todoBtn = document.getElementById('todo-btn');
+const todoRemoveBtn = document.getElementById('todo-remove-btn');
+const todoList = document.getElementById('todo-list');
 
-let tasks = []
-
-let addTask = () => {
+const addTask = () => {
 
     if (todoInput.value !== '' && todoInput.value.length > 1) {
-        const taskInput = document.createElement('input');
-        const taskLabel = document.createElement('label');
+        let taskLink = document.createElement('a');
+        taskLink.onclick = toggleStrike;
 
-        let taskId = todoList.getElementsByTagName('*').length;
+        // Create li and insert input value
+        let task = document.createElement('li');
+        task.innerHTML = todoInput.value;
 
-        taskInput.setAttribute('id', 'task' + taskId);
-        taskInput.setAttribute('type', 'checkbox');
+        // Insert li into <a>
+        taskLink.innerHTML = task.outerHTML;
 
-        taskLabel.setAttribute('for', 'task' + taskId);
-        taskLabel.innerHTML = todoInput.value;
-
-        taskBreak = document.createElement('br');
-
-        const task = {'input': taskInput, 'label': taskLabel, 'break': taskBreak};
-        tasks.push(task);
-
-        todoList.appendChild(task['input']);
-        todoList.appendChild(task['label']);
-        todoList.appendChild(task['break']);
-
+        todoList.appendChild(taskLink);
         todoInput.value = '';
     }
 }
 
-let removeTask = () => {
-    // let test = [...todoList.getElementsByTagName('*')];
-    // console.log(test[0]);
+const toggleStrike = event => {
+    event.target.parentElement.classList.toggle('taskComplete');
 }
+
+const removeTask = () => {
+    let tasksToRemove = [...todoList.getElementsByClassName('taskComplete')];
+    tasksToRemove.map(task => task.remove());
+}
+
+addEventListener('keydown', event => {
+    let keyPressed = event.key;
+    console.log(keyPressed);
+
+    if (keyPressed === 'Enter') {
+        addTask();
+    }
+    else if (keyPressed === 'Backspace' || keyPressed === 'Delete') {
+        removeTask();
+    }
+});
+
 
 todoBtn.onclick = addTask;
 todoRemoveBtn.onclick = removeTask;
