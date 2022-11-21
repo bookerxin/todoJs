@@ -1,0 +1,29 @@
+
+/* This allows firefox to adjust to top etc measurements */
+html, body {
+    height: 100%;
+    width: 100%
+}
+
+#main-div {
+    background-color: antiquewhite;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+    position: relative;
+    top: 30%;
+    margin: auto;
+    width: 50%;
+}
+
+#main-header {
+    position: relative;
+    top: 10px;
+}
+
+#todo-list {
+    position: relative;
+    display: block;
+    right: 5%;
+    list-style-type: none;
+}
