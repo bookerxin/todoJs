@@ -51,6 +51,7 @@ addEventListener('keydown', event => {
 todoBtn.onclick = addTask;
 todoRemoveBtn.onclick = removeTask;
 
+// TODO -
 // TODO - Apply css transition on new task.
 // TODO - Click empty minus for clear first elm.
 // TODO - Make it look better.
