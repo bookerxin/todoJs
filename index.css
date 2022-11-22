@@ -1,4 +1,13 @@
 
+/* Removes selection (Highlighting) of text */
+::selection {
+    background: none;
+}
+/* For Mozilla Firefox */
+::-moz-selection {
+    background: none;
+}
+
 /* This allows firefox to adjust to top etc measurements */
 html, body {
     background-color: #d7b9d5;
@@ -29,26 +38,28 @@ html, body {
     right: 105px;
 }
 
-#todo-list {
-    display: inline-block;
-    position: absolute;
-    align-content: center;
+#todo-list-container {
+    position: relative;
+    top: 10px;
+    right: 20px;
     color: #6b5369;
-    right: 50%;
-    top: 100%;
     list-style-type: none;
 }
 
-#todo-list a li {
+#todo-list {
+    list-style: none;
+}
+
+#todo-list a {
     transition: all 0.3s;
 }
 
-#todo-list a li:hover {
+#todo-list a :hover {
     /*border: #6b5369 1px solid;*/
     color: #a88ea6;
 }
 
-#todo-field {
+#todo-interface {
     display: inline-flex;
 }
 
@@ -73,6 +84,7 @@ html, body {
 .buttonStyles {
     width: 30px;
     height: 23px;
+    color: #6b5369;
     outline-width: 0;
     border: #6b5369 thin solid;
     background-color: #d7b9d5;

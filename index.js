@@ -50,17 +50,17 @@ addEventListener('keydown', event => {
     else if (keyPressed === 'Backspace' || keyPressed === 'Delete') {
         removeTask();
     }
+    else if (keyPressed === 'Escape') {
+        document.activeElement.blur();
+    }
 });
-
 
 todoBtn.onclick = addTask;
 todoRemoveBtn.onclick = removeTask;
 
-// TODO - Longer entries push the entire container.
+
 // TODO - More dynamic on input focus, more movement in surrounding elms.
 // TODO - Task border on hover.
-// TODO - Fix strikethrough toggle, could be temperamental.
 // TODO - Apply css transition on new task.
-// TODO - Make it look better.
 // TODO - Cycle colour schemes at interval.
 // TODO - Somehow make more interactive, could click and drag.
