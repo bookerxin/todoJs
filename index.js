@@ -58,7 +58,7 @@ addEventListener('keydown', event => {
 todoBtn.onclick = addTask;
 todoRemoveBtn.onclick = removeTask;
 
-
+// TODO - Fix new tasks appending to bottom of list?
 // TODO - More dynamic on input focus, more movement in surrounding elms.
 // TODO - Task border on hover.
 // TODO - Apply css transition on new task.
