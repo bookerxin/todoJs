@@ -30,11 +30,22 @@ html, body {
 }
 
 #todo-list {
-    position: relative;
+    display: inline-block;
+    position: absolute;
+    align-content: center;
     color: #6b5369;
-    display: block;
-    right: 5%;
+    right: 50%;
+    top: 100%;
     list-style-type: none;
+}
+
+#todo-list a li {
+    transition: all 0.3s;
+}
+
+#todo-list a li:hover {
+    /*border: #6b5369 1px solid;*/
+    color: #a88ea6;
 }
 
 #todo-field {
